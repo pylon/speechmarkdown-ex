@@ -1,7 +1,7 @@
 defmodule SpeechMarkdown.Transpiler do
   @moduledoc false
 
-  alias SpeechMarkdown.{Grammar, Transpiler.Alexa, Validator}
+  alias SpeechMarkdown.{Grammar, Validator}
 
   @doc """
   Transpiles SpeechMarkdown AST into a SSML string.
@@ -249,13 +249,7 @@ defmodule SpeechMarkdown.Transpiler do
   end
 
   defp tag_postprocess(:voice, voice, {_tag, _, c}) do
-    case Alexa.lookup_voice(voice) do
-      nil ->
-        c
-
-      voice ->
-        {:voice, [name: ch(voice)], c}
-    end
+    {:voice, [name: ch(voice)], c}
   end
 
   defp tag_postprocess(_key, _value, tag) do
