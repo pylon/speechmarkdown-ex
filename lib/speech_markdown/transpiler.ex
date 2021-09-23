@@ -205,6 +205,7 @@ defmodule SpeechMarkdown.Transpiler do
       {:volume, :prosody, :volume},
       {:pitch, :prosody, :pitch},
       {:rate, :prosody, :rate},
+      {:filter, :filter, :params},
       add_end,
       {:sub, :sub, :alias}
     ]
