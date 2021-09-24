@@ -16,7 +16,6 @@ defmodule SpeechMarkdown.TestSupport.FixtureHelper do
 
     {
       File.read!(base <> ".smd"),
-      File.read!(base <> ".alexa.ssml"),
       File.read!(base <> ".google.ssml"),
       File.read!(base <> ".txt") |> String.trim()
     }
