@@ -5,7 +5,7 @@ defmodule SpeechMarkdown.Mixfile do
     [
       app: :speechmarkdown,
       name: "SpeechMarkdown",
-      version: "0.5.0",
+      version: "0.6.0",
       elixir: "~> 1.9",
       description: "SpeechMarkdown transpiler for Elixir",
       package: package(),
