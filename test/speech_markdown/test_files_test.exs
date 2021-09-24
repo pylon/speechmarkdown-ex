@@ -7,14 +7,9 @@ defmodule SpeechMarkdown.TestFilesTest do
   for path <- paths() do
     testcase = Path.basename(path)
 
-    {smd, alexa, google, txt} = fixture(testcase)
+    {smd, google, txt} = fixture(testcase)
 
     describe "#{testcase}" do
-      test "Alexa" do
-        assert {:ok, result} = to_ssml(unquote(smd), variant: :alexa)
-        assert_xml(unquote(alexa) == result)
-      end
-
       test "Google Assistant" do
         assert {:ok, result} = to_ssml(unquote(smd), variant: :google)
         assert_xml(unquote(google) == result)
