@@ -150,7 +150,9 @@ defmodule SpeechMarkdown.Grammar do
       )
       |> tag(:i)
     ])
+    |> ignore(space)
     |> optional(ignore(string(";")))
+    |> ignore(space)
   )
 
   modifier =
