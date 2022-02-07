@@ -95,6 +95,13 @@ defmodule SpeechMarkdownTest do
 
       assert {:ok, "<speak>foo\n</speak>"} ===
                to_ssml("#[x;d;d:\"d\"]\nfoo\n#[another]", validate: :loose)
+
+      assert {:ok,
+              ~s|<speak><emotion emotion="angry" intensity="2">| <>
+                ~s|foo\n</emotion></speak>|} ===
+               to_ssml(~s|#[emotion:"angry";intensity:"2"]\nfoo\n|,
+                 validate: :loose
+               )
     end
   end
 

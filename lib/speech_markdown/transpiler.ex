@@ -144,10 +144,11 @@ defmodule SpeechMarkdown.Transpiler do
   end
 
   defp combine_elements(
-         {:prosody, attrs, [{:prosody, attrs2, children}]},
+         {tag, attrs, [{tag, attrs2, children}]},
          ordering
-       ) do
-    combine_elements({:prosody, attrs ++ attrs2, children}, ordering)
+       )
+       when tag in ~w(prosody emotion)a do
+    combine_elements({tag, attrs ++ attrs2, children}, ordering)
   end
 
   defp combine_elements(
@@ -206,6 +207,8 @@ defmodule SpeechMarkdown.Transpiler do
       {:pitch, :prosody, :pitch},
       {:rate, :prosody, :rate},
       {:diction, :diction, :style},
+      {:emotion, :emotion, :emotion},
+      {:intensity, :emotion, :intensity},
       {:filter, :filter, :params},
       add_end,
       {:sub, :sub, :alias}
