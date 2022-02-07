@@ -47,7 +47,7 @@ This element adds a specific style of diction that can be simulated by
 text manipulation. Examples of diction styles are a "pig Latin" effect and
 a sibilant lisp. The diction syntax allows specifying a comma-separated
 sequence of styles.
-Whitespace is ignored inside the filter definition.
+Whitespace is ignored inside the definition.
 
 #### Modifier example
 ```
@@ -69,3 +69,22 @@ will be `pig_latin`.
 #[diction:"lisp"]
 (Poetry is an echo, asking a shadow to dance.)[diction:"pig_latin"]
 ```
+
+### `emotion`
+This element specifies an emotion in which the associated text should be read.
+Supported emotions will vary by model, but only one emotion can be listed at a time.
+An optional numeric "intensity" modifier is also allowed to vary the expression of the requested emotion.
+
+#### Modifier example
+```
+(Hello)[emotion:"angry";intensity:"2"]
+```
+
+#### Section Example
+```
+#[diction:"excited"]
+She sells seashells down by the seashore.
+```
+
+#### Overrides
+The `emotion` tag follows the same override rules as the other extensions.
