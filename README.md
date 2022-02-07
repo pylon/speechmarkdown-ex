@@ -45,7 +45,7 @@ will be `reverb`.
 ### `diction`
 This element adds a specific style of diction that can be simulated by
 text manipulation. Examples of diction styles are a "pig Latin" effect and
-a sibilant lisp. The diction syntax allows specifying a comma-separated
+a sibilant lisp. The diction syntax allows specifying a semicolon-separated
 sequence of styles.
 Whitespace is ignored inside the definition.
 
@@ -56,7 +56,7 @@ Whitespace is ignored inside the definition.
 
 #### Section Example
 ```
-#[diction:"pig_latin, lisp"]
+#[diction:"pig_latin; lisp"]
 She sells seashells down by the seashore.
 ```
 
